@@ -3,583 +3,729 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rudy | Professional Developer</title>
+    <title>Rudy | Software Developer</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABBJJREFUWEe9l1uoVVUUhr8/s2gpZV5S0SxLNMm8oNhTplmZt0QjK3sIIpNulplUD0FBD0U9lFFQVA9BZU9GWialkt1BxUwsL5VpF9HQSlHRfLIWbM7Z+5y9z9nnnMH0NNhrzP8f45/jH2OMJaY5NufcPZJOAt4A/gV+lTQ0xhiMrZnuPs25dwvgLaAHcBkwE3gLeBLYIGlhjLFtWiDOuZck3QCsA/4GhkbE0gJkpqQzgDXAocDdkr6pB2JaHnDOzQUeB5YD2yLi0OJ+51xfYC3QGRHHFj8751YBFwEPSVrUbBDNhCDkexHYFRGnlDk553YDB0fEkYXtM4G/gKWSrv8/QlAVnPlJOPcL0D0i+pQtcs5tA/oBhyX7FNL9koa3/PZl/IIHHJgBHAGcCEySdG8FiF+AoyKidwliA7BfREyoe44ZDIyUtLPq4uLEzrmHgVuA84BlkiZXxL8H0DUijilI9x/AB5KuqCWx4FLOJYA3JV1ZtZlzbh5wB3AX8KqkG6pAJPn2BLpHxHGFDb4GYkTsVZrrnLsceA1YERFDqkAk+X5VjH85iL3LbFJY0jTu6IjoXWVrvvPxnGo7lO1tnpMUkj6v8oRzbiMwIyKOLEHMB34Hvpd0fNU65xyS7m7YA865K4CXgfnAh5ImVoFIcloDnF6EKIRgnaQhtWK83jTkZxJyMdAPeCgi7q8QHZ2k5YHRwNqIeK00dwlwaLpYVWdS2eScew24HhgHLJaUeaGacIQkRcTRxQ8KPJ4F39NeL4uNimK0CHgQWBwRY+tJ7AaRCuYa4FpJy6pApCSVeWCWpDsaAoBJwFzgVUmj6oHoAJGkeb6kOzsCYHyqoIsljakXgg4QK4DFElJSqt+ccxZj0zOXS7pHUlt+KM9K2agIkcoC6cZanDJiL+CEiPhEko3Xtk1CIYLs8DRgAoUHbP/3gQ9SkbJx8TlLdQFwr6TG/NBsW+/vkOjqlWSaVWrFunCpc24pMDEi8nqlIoEVcLw9hccKEiuBjwvH18TJ4n4rcDRwXn76FatF/lA2WXGEJHx2+yYiWwXMiYglkq6pILF1wJMRkRUmTYRvIWB1xKkRsaIZEs65lAW7qT+JiOyBklKvKFcG/Wl2t4hYX+aJpPKIWJV7rUAis3vGD0l2fY+ICTnRzT23NpWCzblYUlbCO+fuAGYDY4EnJM0uJbplwDzgmWy8MkfkpXl67RuATvkDJrUJkg5qaIMOEJYtFwBXRcR7dh6L+ZvAMEn2N6Mk1dYTQyLCklduu0Ek6f2+xATGtUchYkFEZOqgdyJzziR5tqkBdlQmvRERE/fgqI4Qye4V4E9JWXVI0vu9+NhOsiyZ7/E/GYAGyvmpAAkAAAAASUVORK5CYII=">
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABBJJREFUWEe9l1uoVVUUhr8/s2gpZV5S0SxLNMm8oNhTplmZt0QjK3sIIpNulplUD0FBD0U9lFFQVA9BZU9GWaalkt1BxUwsL5VpF9HQSlHRfLIWbM7Z+5y9z9nnnMH0NNhrzP8f45/jH2OMJaY5NufcPZJOAt4A/gV+lTQ0xhiMrZnuPs25dwvgLaAHcBkwE3gLeBLYIGlhjLFtWiDOuZck3QCsA/4GhkbE0gJkpqQzgDXAocDdkr6pB2JaHnDOzQUeB5YD2yLi0OJ+51xfYC3QGRHHFj8751YBFwEPSVrUbBDNhCDkexHYFRGnlDk553YDB0fEkYXtM4G/gKWSrv8/QlAVnPlJOPcL0D0i+pQtcs5tA/oBhyX7FNL9koa3/PZl/IIHHJgBHAGcCEySdG8FiF+AoyKidwliA7BfREyoe44ZDIyUtLPq4uLEzrmHgVuA84FlkiZXxL8H0DUijilI9x/AB5KuqCWx4FLOJYA3JV1ZtZlzbh5wB3AX8KqkG6pAJPn2BLpHxHGFDb4GYkTsVZrrnLsceA1YERFDqkAk+X5VjH85iL3LbFJY0jTu6IjoXWVrvvPxnGo7lO1tnpMUkj6v8oRzbiMwIyKOLEHMB34Hvpd0fNU65xyS7m7YA865K4CXgfnAh5ImVoFIcloDnF6EKIRgnaQhtWK83jTkZxJyMdAPeCgi7q8QHZ2k5YHRwNqIeK00dwlwaLpYVWdS2eScew24HhgHLJaUeaGacIQkRcTRxQ8KPJ4F39NeL4uNimK0CHgQWBwRY+tJ7AaRCuYa4FpJy6pApCSVeWCWpDsaAoBJwFzgVUmj6oHoAJGkeb6kOzsCYHyqoIsljakXgg4QK4DFElJSqt+ccxZj0zOXS7pHUlt+KM9K2agIkcoC6cZanDJiL+CEiPhEko3Xtk1CIYLs8DRgAoUHbP/3gQ9SkbJx8TlLdQFwr6TG/NBsW+/vkOjqlWSaVWrFunCpc24pMDEi8nqlIoEVcLw9hccKEiuBjwvH18TJ4n4rcDRwXn76FatF/lA2WXGEJHx2+yYiWwXMiYglkq6pILF1wJMRkRUmTYRvIWB1xKkRsaIZEs65lAW7qT+JiOyBklKvKFcG/Wl2t4hYX+aJpPKIWJV7rUAis3vGD0l2fY+ICTnRzT23NpWCzblYUlbCO+fuAGYDY4EnJM0uJbplwDzgmWy8MkfkpXl67RuATvkDJrUJkg5qaIMOEJYtFwBXRcR7dh6L+ZvAMEn2N6Mk1dYTQyLCklduu0Ek6f2+xATGtUchYkFEZOqgdyJzziR5tqkBdlQmvRERE/fgqI4Qye4V4E9JWXVI0vu9+NhOsiyZ7/E/GYAGyvmpAAkAAAAASUVORK5CYII=">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
- <style>
-
-    /* Add Google Fonts at the top of your CSS */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-/* Main Styles */
-:root {
-    --primary-color: #E94560;
-    --secondary-color: #0F3460;
-    --accent-color: #0f3460;
-    --text-color: #e94560;
-    --light-color: #ffffff;
-    --dark-color: #1A1A2E;
-    --psychedelic-accent1: rgba(255, 0, 128, 0.7);
-    --psychedelic-accent2: rgba(0, 255, 255, 0.7);
-    --psychedelic-accent3: rgba(128, 0, 255, 0.7);
-    --grey-color: #f5f5f5;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--dark-color);
-    color: var(--light-color);
-    overflow-x: hidden;
-    position: relative;
-}
-
-/* Preloader */
-.preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--dark-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: opacity 0.5s ease;
-}
-
-.spinner {
-    width: 40px;
-    height: 40px;
-    border: 4px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    border-top-color: var(--primary-color);
-    animation: spin 1s ease-in-out infinite;
-}
-
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
-
-/* Neural Network Canvas */
-#heroCanvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-}
-
-/* Container Styles - Make completely transparent to show neural network */
-.container, .container-fluid {
-    position: relative;
-    z-index: 2;
-    background-color: transparent;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 30px;
-}
-
-/* Navbar */
-.navbar {
-    background-color: transparent;
-    padding: 20px 0;
-    transition: all 0.3s ease;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 2000;
-}
-
-.navbar.scrolled {
-    background-color: rgba(26, 26, 46, 0.5);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 10px 0;
-}
-
-.navbar-brand {
-    color: var(--primary-color) !important;
-    font-weight: 700;
-    font-size: 24px;
-}
-
-.navbar-brand span {
-    color: var(--light-color);
-}
-
-.navbar-toggler {
-    border: none;
-    background: transparent;
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(233, 69, 96, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-}
-
-.nav-link {
-    color: var(--light-color) !important;
-    font-weight: 500;
-    margin: 0 10px;
-    transition: color 0.3s;
-    position: relative;
-}
-
-.nav-link:hover, .nav-link.active {
-    color: var(--primary-color) !important;
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: var(--primary-color);
-    transition: width 0.3s;
-}
-
-.nav-link:hover::after, .nav-link.active::after {
-    width: 100%;
-}
-
-/* Font Awesome Icons Fix */
-.fa, .fas, .far, .fab {
-    display: inline-block;
-    position: relative;
-    z-index: 5;
-}
-
-/* Prevent Font Awesome icons from being affected by backdrop filters */
-i.fa, i.fas, i.far, i.fab {
-    filter: none !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    transform: none !important;
-    transition: color 0.3s ease !important;
-}
-
-/* Hero Section */
-.hero-section {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-}
-
-.display-1 {
-    font-size: 5rem;
-    font-weight: 700;
-    color: var(--light-color);
-}
-
-.lead {
-    font-size: 1.5rem;
-    font-weight: 400;
-}
-
-.domain {
-    font-size: 1.2rem;
-    opacity: 0.8;
-}
-
-.btn-outline-light {
-    border: 2px solid var(--light-color);
-    color: var(--light-color);
-    padding: 10px 25px;
-    border-radius: 50px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.btn-outline-light:hover {
-    background-color: var(--light-color);
-    color: var(--dark-color);
-}
-
-/* Section Styles */
-section {
-    padding: 80px 0;
-    position: relative;
-}
-
-.section-heading {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--light-color);
-    margin-bottom: 20px;
-}
-
-.divider {
-    width: 80px;
-    height: 3px;
-    background-color: var(--primary-color);
-    margin-bottom: 30px;
-}
-
-/* Expertise Cards */
-.expertise-card {
-    background-color: rgba(26, 26, 46, 0.3);
-    border: none;
-    border-radius: 15px;
-    padding: 30px 20px;
-    height: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    backdrop-filter: blur(5px);
-    margin-bottom: 30px;
-}
-
-.expertise-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.icon-container {
-    width: 70px;
-    height: 70px;
-    line-height: 70px;
-    text-align: center;
-    background-color: var(--primary-color);
-    color: var(--light-color);
-    border-radius: 50%;
-    margin: 0 auto 20px;
-    font-size: 28px;
-}
-
-.card-title {
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: var(--light-color);
-}
-
-.card-text {
-    color: var(--grey-color);
-    font-size: 15px;
-    line-height: 1.6;
-}
-
-/* Contact Section */
-.contact-item {
-    background-color: rgba(26, 26, 46, 0.3);
-    border-radius: 15px;
-    padding: 30px;
-    text-align: center;
-    backdrop-filter: blur(5px);
-}
-
-.contact-item i {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.contact-item h3 {
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--light-color);
-    margin-bottom: 15px;
-}
-
-.contact-item a {
-    color: var(--grey-color);
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-.contact-item a:hover {
-    color: var(--primary-color);
-}
-
-.contact-note {
-    font-size: 14px;
-    color: var(--grey-color);
-    opacity: 0.7;
-    margin-top: 15px;
-}
-
-/* Footer */
-footer {
-    background-color: transparent;
-    text-align: center;
-    padding: 30px 0;
-    position: relative;
-    z-index: 2;
-}
-
-/* Media Queries */
-@media (max-width: 991px) {
-    .navbar-collapse {
-        background-color: rgba(26, 26, 46, 0.7);
-        padding: 15px;
-        border-radius: 10px;
-        backdrop-filter: blur(10px);
-    }
-    
-    .display-1 {
-        font-size: 4rem;
-    }
-    
-    .lead {
-        font-size: 1.3rem;
-    }
-}
-
-@media (max-width: 767px) {
-    section {
-        padding: 60px 0;
-    }
-    
-    .section-heading {
-        font-size: 2rem;
-    }
-    
-    .display-1 {
-        font-size: 3rem;
-    }
-    
-    .lead {
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 575px) {
-    .display-1 {
-        font-size: 2.5rem;
-    }
-    
-    .lead {
-        font-size: 1rem;
-    }
-    
-    .btn-outline-light {
-        display: block;
-        margin: 10px auto;
-        max-width: 200px;
-    }
-} 
-
-
- </style>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Basic styling - animations do most of the work */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #ffffff;
-            overflow-x: hidden;
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --neural-blue: #00d4ff;
+            --deep-purple: #6b46c1;
+            --electric-cyan: #06ffa5;
+            --void-black: #000000;
+            --dark-matter: #0a0a0f;
+            --star-white: #ffffff;
+            --glass-white: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background: black;
+            box-sizing: border-box;
         }
-        
-        #animationCanvas {
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--void-black);
+            color: var(--star-white);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Dimensional Grid */
+        body::before {
+            content: '';
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(107, 70, 193, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(6, 255, 165, 0.05) 0%, transparent 50%),
+                linear-gradient(90deg, transparent 98%, rgba(0, 212, 255, 0.02) 100%),
+                linear-gradient(180deg, transparent 98%, rgba(107, 70, 193, 0.02) 100%);
+            background-size: 100% 100%, 100% 100%, 100% 100%, 60px 60px, 60px 60px;
+            pointer-events: none;
+            z-index: 0;
         }
-        
+
+        /* Multi-layer Canvas System */
+        #dimensionCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        #particleCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        #interactionCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            pointer-events: auto;
+        }
+
         .content-container {
             position: relative;
-            z-index: 1;
+            z-index: 10;
         }
-        
+
+        /* Sublime Navbar */
         .navbar {
-            background-color: transparent !important;
-            padding: 1.5rem 0;
+            background: linear-gradient(135deg, 
+                rgba(0, 0, 0, 0.95) 0%, 
+                rgba(10, 10, 15, 0.95) 50%, 
+                rgba(0, 0, 0, 0.95) 100%);
+            backdrop-filter: blur(25px) saturate(180%);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.15);
+            padding: 1.2rem 0;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
-        
-        .navbar-brand span {
+
+        .navbar.scrolled {
+            background: linear-gradient(135deg, 
+                rgba(0, 0, 0, 0.98) 0%, 
+                rgba(15, 15, 25, 0.98) 50%, 
+                rgba(0, 0, 0, 0.98) 100%);
+            box-shadow: 0 15px 50px rgba(0, 212, 255, 0.1);
+            border-bottom-color: rgba(0, 212, 255, 0.3);
+        }
+
+        .navbar-brand {
+            font-family: 'Space Grotesk', sans-serif;
             font-weight: 700;
-            letter-spacing: 1px;
+            font-size: 1.8rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+            position: relative;
         }
-        
+
+        .navbar-brand::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent-gradient);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand:hover::after {
+            transform: scaleX(1);
+        }
+
         .nav-link {
-            color: rgba(255, 255, 255, 0.8) !important;
+            color: rgba(255, 255, 255, 0.85) !important;
             font-weight: 500;
-            transition: color 0.3s;
+            font-size: 1rem;
+            margin: 0 1.2rem;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.8rem 0 !important;
         }
-        
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gradient);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            transform: translateX(-50%);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            transition: width 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            z-index: -1;
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            width: 100%;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
         .nav-link:hover {
-            color: #ffffff !important;
+            color: var(--star-white) !important;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
         }
-        
+
+        /* Sublime Hero Section */
         .hero-section {
             min-height: 100vh;
             display: flex;
             align-items: center;
+            position: relative;
+            background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.08) 0%, transparent 70%);
         }
-        
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(107, 70, 193, 0.2) 0%, rgba(0, 212, 255, 0.1) 50%, transparent 70%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: sublimePulse 6s ease-in-out infinite;
+            filter: blur(1px);
+        }
+
+        @keyframes sublimePulse {
+            0%, 100% { 
+                transform: translate(-50%, -50%) scale(1); 
+                opacity: 0.4; 
+            }
+            33% { 
+                transform: translate(-50%, -50%) scale(1.3); 
+                opacity: 0.2; 
+            }
+            66% { 
+                transform: translate(-50%, -50%) scale(0.8); 
+                opacity: 0.6; 
+            }
+        }
+
         .display-1 {
-            font-weight: 800;
-            letter-spacing: -1px;
-            font-size: 5rem;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 4.8rem;
+            background: linear-gradient(45deg, 
+                var(--neural-blue) 0%, 
+                var(--star-white) 25%, 
+                var(--electric-cyan) 50%, 
+                var(--deep-purple) 75%, 
+                var(--neural-blue) 100%);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fluidShift 8s ease-in-out infinite;
+            letter-spacing: 3px;
+            line-height: 1.1;
+            text-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
         }
-        
+
+        @keyframes fluidShift {
+            0%, 100% { background-position: 0% 50%; }
+            25% { background-position: 100% 25%; }
+            50% { background-position: 100% 75%; }
+            75% { background-position: 0% 100%; }
+        }
+
         .lead {
-            font-weight: 400;
-            letter-spacing: 0.5px;
-            margin-top: 1rem;
-        }
-        
-        .expertise-card {
-            background-color: rgb(48 41 194 / 50%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            transition: all 0.3s ease;
-            height: 100%;
-            border-radius: 8px;
-            padding: 2rem;
-            text-align: center;
-        }
-        
-        .expertise-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .icon-container {
-            margin-bottom: 1.5rem;
-        }
-        
-        .icon-container i {
-            font-size: 2.5rem;
+            font-size: 1.4rem;
+            font-weight: 300;
             color: rgba(255, 255, 255, 0.9);
-            background-color: black;
-            width: 80px;
-            height: 80px;
+            margin-top: 1.5rem;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            line-height: 1.6;
+        }
+
+        .subheading {
+            font-size: 1.1rem;
+            color: var(--electric-cyan);
+            font-weight: 400;
+            text-shadow: 0 0 20px rgba(6, 255, 165, 0.4);
+            letter-spacing: 2px;
+        }
+
+        /* Sublime Button */
+        .btn-sublime {
+            background: var(--primary-gradient);
+            border: 2px solid transparent;
+            color: var(--star-white);
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            box-shadow: 
+                0 0 40px rgba(102, 126, 234, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-sublime::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .btn-sublime::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--secondary-gradient);
+            opacity: 0;
+            transition: opacity 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            z-index: -1;
+        }
+
+        .btn-sublime:hover::before {
+            left: 100%;
+        }
+
+        .btn-sublime:hover::after {
+            opacity: 1;
+        }
+
+        .btn-sublime:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 15px 60px rgba(102, 126, 234, 0.4),
+                0 5px 20px rgba(245, 87, 108, 0.3);
+        }
+
+        /* Fluid Cards */
+        .expertise-card {
+            background: linear-gradient(135deg, 
+                rgba(0, 0, 0, 0.7) 0%, 
+                rgba(255, 255, 255, 0.03) 50%, 
+                rgba(0, 0, 0, 0.8) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 2.8rem 2rem;
+            height: 100%;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(20px) saturate(180%);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .expertise-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(0, 212, 255, 0.03) 0%, 
+                rgba(107, 70, 193, 0.03) 50%, 
+                rgba(6, 255, 165, 0.03) 100%);
+            opacity: 0;
+            transition: opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .expertise-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            opacity: 0;
+            animation: cardRotate 10s linear infinite;
+            transition: opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        @keyframes cardRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .expertise-card:hover::before {
+            opacity: 1;
+        }
+
+        .expertise-card:hover::after {
+            opacity: 1;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-20px) scale(1.02);
+            border-color: rgba(0, 212, 255, 0.4);
+            box-shadow: 
+                0 25px 80px rgba(0, 212, 255, 0.15),
+                0 10px 40px rgba(107, 70, 193, 0.1);
+        }
+
+        .icon-container {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 2rem;
+            background: var(--primary-gradient);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
+            box-shadow: 
+                0 0 30px rgba(102, 126, 234, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .icon-container::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
-            margin: 0 auto;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            background: conic-gradient(from 0deg, 
+                var(--neural-blue), 
+                var(--deep-purple), 
+                var(--electric-cyan), 
+                var(--neural-blue));
+            animation: iconShimmer 4s linear infinite;
+            z-index: -1;
+            padding: 2px;
         }
-        
+
+        @keyframes iconShimmer {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .expertise-card:hover .icon-container {
+            transform: scale(1.1);
+            box-shadow: 
+                0 0 50px rgba(102, 126, 234, 0.6),
+                0 0 20px rgba(245, 87, 108, 0.3);
+        }
+
+        .icon-container i {
+            font-size: 2.5rem;
+            color: var(--star-white);
+            z-index: 1;
+            position: relative;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+        }
+
         .card-title {
-            color: #ffffff;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            color: var(--star-white);
+            margin-bottom: 1.2rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
         }
-        
+
         .card-text {
             color: rgba(255, 255, 255, 0.8);
-        }
-        
-        .contact-item {
-            background-color: rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            border-radius: 8px;
-            padding: 2rem;
+            line-height: 1.7;
             text-align: center;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 2;
         }
-        
-        .contact-item:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .contact-item i {
-            font-size: 2.5rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 1rem;
-        }
-        
-        .contact-item a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .contact-item a:hover {
-            color: #ffffff;
-        }
-        
-        .btn-outline-light {
-            border: 2px solid rgba(255, 255, 255, 0.8);
-            font-weight: 500;
-            padding: 0.6rem 2rem;
-            transition: all 0.3s ease;
-            background-color: transparent;
-        }
-        
-        .btn-outline-light:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
-            transform: translateY(-3px);
-        }
-        
+
+        /* Section Headings */
         .section-heading {
+            font-family: 'Space Grotesk', sans-serif;
             font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
+            font-size: 3.2rem;
+            text-align: center;
+            background: linear-gradient(45deg, 
+                var(--neural-blue), 
+                var(--star-white), 
+                var(--electric-cyan));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fluidShift 6s ease-in-out infinite;
+            margin-bottom: 1.5rem;
+            position: relative;
         }
-        
+
         .divider {
-            width: 60px;
-            height: 3px;
-            background: rgba(255, 255, 255, 0.2);
-            margin: 1rem auto 3rem;
+            width: 120px;
+            height: 4px;
+            background: var(--accent-gradient);
+            margin: 1.5rem auto 4rem;
+            border-radius: 2px;
+            box-shadow: 0 0 30px rgba(79, 172, 254, 0.5);
+            position: relative;
         }
-        
-        #experience {
-            min-height: 100vh;
-            padding: 5rem 0;
+
+        .divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            background: var(--electric-cyan);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 20px rgba(6, 255, 165, 0.8);
         }
-        
-        #contact {
-            min-height: 80vh;
-            padding: 5rem 0;
+
+        /* Contact Section */
+        .contact-item {
+            background: linear-gradient(135deg, 
+                rgba(0, 0, 0, 0.8) 0%, 
+                rgba(255, 255, 255, 0.05) 50%, 
+                rgba(0, 0, 0, 0.9) 100%);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 24px;
+            padding: 3.5rem 2.5rem;
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            backdrop-filter: blur(25px) saturate(180%);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 15px 60px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
-        
-        footer {
-            background-color: transparent;
-            color: rgba(255, 255, 255, 0.6);
-            padding: 1.5rem 0;
+
+        .contact-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, 
+                transparent, 
+                rgba(0, 212, 255, 0.1), 
+                transparent, 
+                rgba(6, 255, 165, 0.1), 
+                transparent);
+            animation: contactAura 8s linear infinite;
+            z-index: 0;
+            opacity: 0.7;
+        }
+
+        @keyframes contactAura {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .contact-item > * {
             position: relative;
             z-index: 1;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-15px);
+            border-color: var(--electric-cyan);
+            box-shadow: 
+                0 30px 100px rgba(0, 212, 255, 0.2),
+                0 15px 50px rgba(6, 255, 165, 0.15);
+        }
+
+        .contact-item i {
+            font-size: 4rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 0 20px rgba(79, 172, 254, 0.5));
+        }
+
+        .contact-item h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--star-white);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item a {
+            color: var(--electric-cyan);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+        }
+
+        .contact-item a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--electric-cyan);
+            transition: width 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .contact-item a:hover::after {
+            width: 100%;
+        }
+
+        .contact-item a:hover {
+            color: var(--star-white);
+            text-shadow: 0 0 20px rgba(6, 255, 165, 0.8);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, 
+                rgba(0, 0, 0, 0.95) 0%, 
+                rgba(10, 10, 15, 0.98) 50%, 
+                rgba(0, 0, 0, 0.95) 100%);
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 2.5rem 0;
+            text-align: center;
+            backdrop-filter: blur(25px) saturate(180%);
+            position: relative;
+        }
+
+        /* Sections */
+        section {
+            padding: 7rem 0;
+            position: relative;
+        }
+
+        #experience {
+            background: radial-gradient(ellipse at top, rgba(107, 70, 193, 0.03) 0%, transparent 70%);
+        }
+
+        #contact {
+            background: radial-gradient(ellipse at bottom, rgba(0, 212, 255, 0.03) 0%, transparent 70%);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 991px) {
+            .display-1 {
+                font-size: 3.8rem;
+            }
+            
+            .section-heading {
+                font-size: 2.6rem;
+            }
+            
+            .navbar-collapse {
+                background: linear-gradient(135deg, 
+                    rgba(0, 0, 0, 0.95) 0%, 
+                    rgba(15, 15, 25, 0.98) 100%);
+                border: 1px solid rgba(0, 212, 255, 0.2);
+                border-radius: 20px;
+                padding: 2rem;
+                margin-top: 1rem;
+                backdrop-filter: blur(25px) saturate(180%);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .display-1 {
+                font-size: 3rem;
+            }
+            
+            .lead {
+                font-size: 1.2rem;
+            }
+            
+            .expertise-card {
+                margin-bottom: 2.5rem;
+            }
+            
+            section {
+                padding: 5rem 0;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .display-1 {
+                font-size: 2.4rem;
+            }
+            
+            .section-heading {
+                font-size: 2.2rem;
+            }
+            
+            .icon-container {
+                width: 75px;
+                height: 75px;
+            }
+            
+            .icon-container i {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Animation Canvas (Full Screen) -->
-    <canvas id="animationCanvas"></canvas>
+    <!-- Multi-Dimensional Canvas System -->
+    <canvas id="dimensionCanvas"></canvas>
+    <canvas id="particleCanvas"></canvas>
+    <canvas id="interactionCanvas"></canvas>
 
     <div class="content-container">
         <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="#"><span></span></a>
+                <a class="navbar-brand" href="#">RUDY</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#home">Home</a>
+                            <a class="nav-link active" href="#home">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#experience">Experience</a>
@@ -596,95 +742,94 @@ footer {
         <section id="home" class="hero-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 mx-auto text-center">
-                         
-                        <p class="lead mb-4">Software Engineering & Automation</p>
-                        <p class="subheading mb-4"> • AI Solutions </p>
-                         
-                        <a href="#experience" class="btn btn-outline-light btn-lg">Explore My Work</a>
+                    <div class="col-lg-10 mx-auto text-center">
+                        <h1 class="display-1 mb-4">SOFTWARE DEVELOPER</h1>
+                        <p class="lead mb-3">Crafting Digital Experiences Through Code</p>
+                        <p class="subheading mb-5">• Innovation • Automation • Interactive Solutions •</p>
+                        <a href="#experience" class="btn btn-sublime btn-lg">Explore My Work</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Experience Section -->
-        <section id="experience" class="py-5">
+        <section id="experience">
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <h2 class="section-heading">Mastered Technologies</h2>
+                        <h2 class="section-heading">Expertise & Mastery</h2>
                         <div class="divider"></div>
                     </div>
                 </div>
                 
                 <div class="row g-4 justify-content-center">
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-lg-4">
                         <div class="expertise-card">
                             <div class="icon-container">
                                 <i class="fas fa-mobile-alt"></i>
                             </div>
-                            <h3 class="card-title">Mobile Architecture</h3>
-                            <p class="card-text">Advanced mobile applications with seamless performance and elegant user experiences.</p>
+                            <h3 class="card-title">Mobile Development</h3>
+                            <p class="card-text">Building responsive mobile applications with cutting-edge performance optimization and intuitive user experiences across platforms.</p>
                         </div>
                     </div>
                     
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-lg-4">
                         <div class="expertise-card">
                             <div class="icon-container">
                                 <i class="fas fa-puzzle-piece"></i>
                             </div>
-                            <h3 class="card-title">Browser Innovation</h3>
-                            <p class="card-text">Powerful browser extensions with sophisticated DOM manipulation and performance enhancements.</p>
+                            <h3 class="card-title">Browser Extensions</h3>
+                            <p class="card-text">Creating powerful browser extensions with advanced DOM manipulation, real-time processing, and seamless integration capabilities.</p>
                         </div>
                     </div>
                     
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-lg-4">
                         <div class="expertise-card">
                             <div class="icon-container">
                                 <i class="fas fa-cogs"></i>
                             </div>
                             <h3 class="card-title">Automation Systems</h3>
-                            <p class="card-text">Advanced automation solutions using Python and Node.js with cutting-edge integrations.</p>
+                            <p class="card-text">Developing intelligent automation frameworks using Python and Node.js with precision-engineered workflows and integrations.</p>
                         </div>
                     </div>
                     
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-lg-4">
                         <div class="expertise-card">
                             <div class="icon-container">
-                                <i class="fas fa-link"></i>
+                                <i class="fas fa-gamepad"></i>
                             </div>
-                            <h3 class="card-title">Blockchain Deployment</h3>
-                            <p class="card-text">Smart contract deployment and blockchain solution architecture for next-generation applications.</p>
+                            <h3 class="card-title">Interactive Mini Games</h3>
+                            <p class="card-text">Designing engaging mini-games with advanced physics engines, dynamic AI opponents, and immersive gameplay mechanics.</p>
                         </div>
                     </div>
                     
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-lg-4">
                         <div class="expertise-card">
                             <div class="icon-container">
-                                <i class="fas fa-chart-line"></i>
+                                <i class="fas fa-dice"></i>
                             </div>
-                            <h3 class="card-title">Trading Indicators</h3>
-                            <p class="card-text">Custom TradingView indicators and trading algorithms for market analysis and automation.</p>
+                            <h3 class="card-title">Casual Gaming</h3>
+                            <p class="card-text">Creating addictive casual games with intelligent difficulty adjustment, randomized challenges, and compelling user retention.</p>
                         </div>
                     </div>
                     
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-lg-4">
                         <div class="expertise-card">
                             <div class="icon-container">
                                 <i class="fas fa-film"></i>
                             </div>
-                            <h3 class="card-title">AI Content</h3>
-                            <p class="card-text">Creating engaging reels and digital content using AI-powered tools and automation.</p>
+                            <h3 class="card-title">AI Content Creation</h3>
+                            <p class="card-text">Leveraging AI-powered tools for content generation, video editing, and interactive digital experiences with automated workflows.</p>
                         </div>
                     </div>
                     
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-lg-4">
                         <div class="expertise-card">
                             <div class="icon-container">
                                 <i class="fas fa-code"></i>
                             </div>
                             <h3 class="card-title">Web Development</h3>
-                            <p class="card-text">Building high-performance, professional websites with modern frameworks and exceptional UX design.</p>
+                            <p class="card-text">Building high-performance websites with modern frameworks, optimized UX design, and scalable architecture solutions.</p>
                         </div>
                     </div>
                 </div>
@@ -692,20 +837,21 @@ footer {
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-5">
-            <div class="container position-relative">
+        <section id="contact">
+            <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center">
-                        <h2 class="section-heading">Initiate Collaboration</h2>
+                        <h2 class="section-heading">Let's Connect</h2>
                         <div class="divider"></div>
-                        <p class="mb-5">Ready to transform your vision into reality? Let's connect.</p>
+                        <p class="mb-5 lead">Ready to bring your ideas to life? Let's create something extraordinary together.</p>
                         
                         <div class="row g-4 justify-content-center">
-                            <div class="col-md-6 mx-auto">
+                            <div class="col-md-8">
                                 <div class="contact-item">
                                     <i class="fab fa-whatsapp"></i>
-                                    <h3>Connect Securely</h3>
-                                    <p><a>WhatsApp</a></p>
+                                    <h3>Direct Communication</h3>
+                                    <p><a href="https://wa.me/9613174873" target="_blank">WhatsApp</a></p>
+                                    <small class="text-muted">Available for professional inquiries and collaborations</small>
                                 </div>
                             </div>
                         </div>
@@ -715,9 +861,12 @@ footer {
         </section>
 
         <!-- Footer -->
-        <footer class="py-4">
-            <div class="container text-center">
-                <p>&copy; 2025 Rudy. All Rights Reserved. | rudyam.github.io</p>
+        <footer>
+            <div class="container">
+                <div class="text-center">
+                    <p>&copy; 2025 Rudy. All Rights Reserved. | rudyam.github.io</p>
+                    <small>Powered by Innovation & Creative Technology</small>
+                </div>
             </div>
         </footer>
     </div>
@@ -725,228 +874,391 @@ footer {
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
     <script>
-    // Advanced quantum particle animation system
+    // SUBLIME MULTI-DIMENSIONAL ANIMATION SYSTEM
     document.addEventListener('DOMContentLoaded', function() {
-        const canvas = document.getElementById('animationCanvas');
-        const ctx = canvas.getContext('2d');
+        // Canvas Setup
+        const dimensionCanvas = document.getElementById('dimensionCanvas');
+        const particleCanvas = document.getElementById('particleCanvas');
+        const interactionCanvas = document.getElementById('interactionCanvas');
         
-        // Set canvas to full screen
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        const dimCtx = dimensionCanvas.getContext('2d');
+        const partCtx = particleCanvas.getContext('2d');
+        const intCtx = interactionCanvas.getContext('2d');
         
-        // Resize handling
-        window.addEventListener('resize', function() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            initParticles(); // Regenerate particles on resize
-        });
+        let width, height;
         
-        // Mouse interaction
+        function resizeCanvases() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            
+            [dimensionCanvas, particleCanvas, interactionCanvas].forEach(canvas => {
+                canvas.width = width;
+                canvas.height = height;
+            });
+        }
+        
+        resizeCanvases();
+        window.addEventListener('resize', resizeCanvases);
+        
+        // Mouse/Touch Interaction
         let mouse = {
-            x: undefined,
-            y: undefined,
-            radius: 200
+            x: width / 2,
+            y: height / 2,
+            vx: 0,
+            vy: 0,
+            pressed: false
         };
         
-        window.addEventListener('mousemove', function(event) {
-            mouse.x = event.x;
-            mouse.y = event.y;
-        });
+        function updateMouse(e) {
+            const rect = interactionCanvas.getBoundingClientRect();
+            const newX = e.clientX - rect.left;
+            const newY = e.clientY - rect.top;
+            
+            mouse.vx = (newX - mouse.x) * 0.1;
+            mouse.vy = (newY - mouse.y) * 0.1;
+            mouse.x = newX;
+            mouse.y = newY;
+        }
         
-        // Touch interaction for mobile
-        window.addEventListener('touchmove', function(event) {
-            mouse.x = event.touches[0].clientX;
-            mouse.y = event.touches[0].clientY;
-        }, { passive: true });
+        interactionCanvas.addEventListener('mousemove', updateMouse);
+        interactionCanvas.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+            updateMouse(e.touches[0]);
+        }, { passive: false });
         
-        // Quantum particles system
-        let particlesArray = [];
-        let hue = 0; // For color cycling
+        interactionCanvas.addEventListener('mousedown', () => mouse.pressed = true);
+        interactionCanvas.addEventListener('mouseup', () => mouse.pressed = false);
+        interactionCanvas.addEventListener('touchstart', () => mouse.pressed = true);
+        interactionCanvas.addEventListener('touchend', () => mouse.pressed = false);
         
-        class Particle {
-            constructor(x, y) {
-                this.x = x || Math.random() * canvas.width;
-                this.y = y || Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 0.1;
-                this.speedX = Math.random() * 3 - 1.5;
-                this.speedY = Math.random() * 3 - 1.5;
-                this.color = `hsla(${Math.random() * 60 + 180}, 100%, 70%, ${Math.random() * 0.5 + 0.3})`;
-                this.density = Math.random() * 30 + 1;
-                this.life = 100 + Math.random() * 100; // Particle lifetime
-                this.entangled = null;
-                this.entangleProbability = 0.003;
-                this.originalX = this.x;
-                this.originalY = this.y;
-                this.angle = Math.random() * Math.PI * 2;
-                this.angleSpeed = Math.random() * 0.02 - 0.01;
-                this.amplitude = Math.random() * 2 + 0.5; // For sinusoidal movement
+        // Dimensional Field System
+        class DimensionalField {
+            constructor() {
+                this.waves = [];
+                this.time = 0;
+                this.initWaves();
+            }
+            
+            initWaves() {
+                for (let i = 0; i < 8; i++) {
+                    this.waves.push({
+                        amplitude: Math.random() * 30 + 10,
+                        frequency: Math.random() * 0.02 + 0.005,
+                        phase: Math.random() * Math.PI * 2,
+                        speed: Math.random() * 0.01 + 0.005,
+                        color: `hsl(${200 + Math.random() * 60}, 70%, 50%)`,
+                        alpha: Math.random() * 0.1 + 0.05
+                    });
+                }
             }
             
             update() {
-                // Move particles in natural quantum patterns
-                this.angle += this.angleSpeed;
+                this.time += 0.016;
+                dimCtx.fillStyle = 'rgba(0, 0, 0, 0.02)';
+                dimCtx.fillRect(0, 0, width, height);
                 
-                // Add some sinusoidal quantum fluctuation
-                const quantum_shift_x = Math.sin(this.angle) * this.amplitude;
-                const quantum_shift_y = Math.cos(this.angle) * this.amplitude;
-                
-                // Update position based on speed and quantum effects
-                this.x += this.speedX + quantum_shift_x;
-                this.y += this.speedY + quantum_shift_y;
-                
-                // Check for mouse-based quantum distortion
-                if (mouse.x && mouse.y) {
-                    const dx = mouse.x - this.x;
-                    const dy = mouse.y - this.y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
+                this.waves.forEach((wave, index) => {
+                    const gradient = dimCtx.createLinearGradient(0, 0, width, height);
+                    gradient.addColorStop(0, `hsla(${200 + index * 10}, 70%, 50%, 0)`);
+                    gradient.addColorStop(0.5, `hsla(${200 + index * 10}, 70%, 50%, ${wave.alpha})`);
+                    gradient.addColorStop(1, `hsla(${200 + index * 10}, 70%, 50%, 0)`);
                     
-                    if (distance < mouse.radius) {
-                        const force = (mouse.radius - distance) / mouse.radius;
-                        const directionX = dx / distance || 0;
-                        const directionY = dy / distance || 0;
-                        this.x -= directionX * force * 2;
-                        this.y -= directionY * force * 2;
+                    dimCtx.strokeStyle = gradient;
+                    dimCtx.lineWidth = 2;
+                    dimCtx.beginPath();
+                    
+                    for (let x = 0; x < width; x += 10) {
+                        const y = height / 2 + 
+                                Math.sin((x * wave.frequency) + (this.time * wave.speed) + wave.phase) * wave.amplitude +
+                                Math.sin((mouse.x * 0.01) + (this.time * 2)) * 20 +
+                                Math.cos((mouse.y * 0.01) + (this.time * 1.5)) * 15;
+                        
+                        if (x === 0) dimCtx.moveTo(x, y);
+                        else dimCtx.lineTo(x, y);
                     }
+                    
+                    dimCtx.stroke();
+                    
+                    // Update wave properties
+                    wave.phase += wave.speed;
+                    wave.alpha = Math.sin(this.time + index) * 0.05 + 0.08;
+                });
+            }
+        }
+        
+        // Sublime Particle System
+        class SublimeParticle {
+            constructor() {
+                this.reset();
+                this.age = Math.random() * this.life;
+            }
+            
+            reset() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 2;
+                this.vy = (Math.random() - 0.5) * 2;
+                this.life = 300 + Math.random() * 200;
+                this.age = 0;
+                this.size = Math.random() * 3 + 1;
+                this.hue = 200 + Math.random() * 60;
+                this.brightness = 50 + Math.random() * 50;
+                this.pulsePhase = Math.random() * Math.PI * 2;
+                this.trail = [];
+            }
+            
+            update() {
+                // Mouse attraction
+                const dx = mouse.x - this.x;
+                const dy = mouse.y - this.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < 200) {
+                    const force = (200 - distance) / 200 * 0.5;
+                    this.vx += (dx / distance) * force * 0.1;
+                    this.vy += (dy / distance) * force * 0.1;
                 }
                 
-                // Boundary check with quantum uncertainty - smooth wrap
-                if (this.x > canvas.width + 10) this.x = -10;
-                if (this.x < -10) this.x = canvas.width + 10;
-                if (this.y > canvas.height + 10) this.y = -10;
-                if (this.y < -10) this.y = canvas.height + 10;
+                // Fluid movement
+                this.vx += (Math.random() - 0.5) * 0.02;
+                this.vy += (Math.random() - 0.5) * 0.02;
+                this.vx *= 0.99;
+                this.vy *= 0.99;
                 
-                // Entanglement logic - quantum mechanics inspired
-                if (!this.entangled && Math.random() < this.entangleProbability) {
-                    // Find a non-entangled particle to entangle with
-                    const candidates = particlesArray.filter(p => p !== this && !p.entangled);
-                    if (candidates.length > 0) {
-                        this.entangled = candidates[Math.floor(Math.random() * candidates.length)];
-                        this.entangled.entangled = this;
+                this.x += this.vx;
+                this.y += this.vy;
+                
+                // Trail effect
+                this.trail.push({ x: this.x, y: this.y });
+                if (this.trail.length > 20) this.trail.shift();
+                
+                // Boundary wrap
+                if (this.x < 0) this.x = width;
+                if (this.x > width) this.x = 0;
+                if (this.y < 0) this.y = height;
+                if (this.y > height) this.y = 0;
+                
+                this.age++;
+                if (this.age > this.life) this.reset();
+            }
+            
+            draw() {
+                const alpha = 1 - (this.age / this.life);
+                const pulse = Math.sin(this.age * 0.1 + this.pulsePhase) * 0.5 + 0.5;
+                const size = this.size * (0.5 + pulse * 0.5);
+                
+                // Trail
+                this.trail.forEach((point, index) => {
+                    const trailAlpha = (index / this.trail.length) * alpha * 0.3;
+                    partCtx.fillStyle = `hsla(${this.hue}, 70%, ${this.brightness}%, ${trailAlpha})`;
+                    partCtx.beginPath();
+                    partCtx.arc(point.x, point.y, size * 0.3, 0, Math.PI * 2);
+                    partCtx.fill();
+                });
+                
+                // Outer glow
+                const gradient = partCtx.createRadialGradient(
+                    this.x, this.y, 0,
+                    this.x, this.y, size * 4
+                );
+                gradient.addColorStop(0, `hsla(${this.hue}, 70%, ${this.brightness}%, ${alpha * 0.3})`);
+                gradient.addColorStop(1, `hsla(${this.hue}, 70%, ${this.brightness}%, 0)`);
+                
+                partCtx.fillStyle = gradient;
+                partCtx.beginPath();
+                partCtx.arc(this.x, this.y, size * 4, 0, Math.PI * 2);
+                partCtx.fill();
+                
+                // Core
+                partCtx.fillStyle = `hsla(${this.hue}, 80%, ${this.brightness + 20}%, ${alpha})`;
+                partCtx.beginPath();
+                partCtx.arc(this.x, this.y, size, 0, Math.PI * 2);
+                partCtx.fill();
+            }
+        }
+        
+        // Neural Connection System
+        class NeuralNetwork {
+            constructor(particles) {
+                this.particles = particles;
+                this.connections = [];
+            }
+            
+            update() {
+                this.connections = [];
+                
+                for (let i = 0; i < this.particles.length; i++) {
+                    for (let j = i + 1; j < this.particles.length; j++) {
+                        const p1 = this.particles[i];
+                        const p2 = this.particles[j];
+                        const dx = p1.x - p2.x;
+                        const dy = p1.y - p2.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < 150) {
+                            const strength = 1 - (distance / 150);
+                            this.connections.push({
+                                p1, p2, strength, distance
+                            });
+                        }
                     }
-                }
-                
-                // Reduced life for limited lifespan particles - quantum decay
-                this.life -= 0.1;
-                if (this.life <= 0) {
-                    // Replace the particle at a new position
-                    this.x = Math.random() * canvas.width;
-                    this.y = Math.random() * canvas.height;
-                    this.life = 100 + Math.random() * 100;
-                    this.entangled = null;
                 }
             }
             
             draw() {
-                // Draw the particle
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = this.color;
-                ctx.fill();
-                
-                // Draw entanglement connection - quantum link
-                if (this.entangled) {
-                    ctx.beginPath();
-                    ctx.moveTo(this.x, this.y);
-                    ctx.lineTo(this.entangled.x, this.entangled.y);
-                    
-                    // Create gradient for entanglement visualization
-                    const gradient = ctx.createLinearGradient(
-                        this.x, this.y, this.entangled.x, this.entangled.y
+                this.connections.forEach(conn => {
+                    const alpha = conn.strength * 0.3;
+                    const gradient = partCtx.createLinearGradient(
+                        conn.p1.x, conn.p1.y,
+                        conn.p2.x, conn.p2.y
                     );
-                    gradient.addColorStop(0, `hsla(${hue}, 100%, 70%, 0.3)`);
-                    gradient.addColorStop(1, `hsla(${hue + 30}, 100%, 70%, 0.3)`);
                     
-                    ctx.strokeStyle = gradient;
-                    ctx.lineWidth = 0.5;
-                    ctx.stroke();
+                    gradient.addColorStop(0, `hsla(${conn.p1.hue}, 70%, 60%, ${alpha})`);
+                    gradient.addColorStop(1, `hsla(${conn.p2.hue}, 70%, 60%, ${alpha})`);
+                    
+                    partCtx.strokeStyle = gradient;
+                    partCtx.lineWidth = conn.strength * 2;
+                    partCtx.beginPath();
+                    partCtx.moveTo(conn.p1.x, conn.p1.y);
+                    partCtx.lineTo(conn.p2.x, conn.p2.y);
+                    partCtx.stroke();
+                });
+            }
+        }
+        
+        // Interaction Effects
+        class InteractionEffect {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.size = 0;
+                this.maxSize = 100;
+                this.alpha = 1;
+                this.particles = [];
+                
+                for (let i = 0; i < 12; i++) {
+                    const angle = (i / 12) * Math.PI * 2;
+                    this.particles.push({
+                        x: x,
+                        y: y,
+                        vx: Math.cos(angle) * 5,
+                        vy: Math.sin(angle) * 5,
+                        life: 60,
+                        age: 0
+                    });
                 }
             }
-        }
-        
-        // Create quantum field effect
-        function createWave(x, y) {
-            for (let i = 0; i < 5; i++) {
-                const size = Math.random() * 2 + 1;
-                const density = Math.random() * 20 + 10;
-                const angle = Math.random() * Math.PI * 2;
-                const distance = Math.random() * 30 + 10;
+            
+            update() {
+                this.size += 3;
+                this.alpha = 1 - (this.size / this.maxSize);
                 
-                particlesArray.push(new Particle(
-                    x + Math.cos(angle) * distance,
-                    y + Math.sin(angle) * distance
-                ));
+                this.particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.vx *= 0.98;
+                    p.vy *= 0.98;
+                    p.age++;
+                });
+                
+                return this.size < this.maxSize;
+            }
+            
+            draw() {
+                // Ripple effect
+                intCtx.strokeStyle = `hsla(180, 70%, 60%, ${this.alpha * 0.5})`;
+                intCtx.lineWidth = 2;
+                intCtx.beginPath();
+                intCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                intCtx.stroke();
+                
+                // Burst particles
+                this.particles.forEach(p => {
+                    const pAlpha = 1 - (p.age / p.life);
+                    intCtx.fillStyle = `hsla(200, 70%, 70%, ${pAlpha})`;
+                    intCtx.beginPath();
+                    intCtx.arc(p.x, p.y, 3, 0, Math.PI * 2);
+                    intCtx.fill();
+                });
             }
         }
         
-        // Create quantum disturbance on click
-        window.addEventListener('click', function(event) {
-            createWave(event.x, event.y);
+        // Initialize Systems
+        const dimensionalField = new DimensionalField();
+        const particles = Array.from({ length: 60 }, () => new SublimeParticle());
+        const neuralNetwork = new NeuralNetwork(particles);
+        let interactionEffects = [];
+        
+        // Interaction Events
+        interactionCanvas.addEventListener('click', (e) => {
+            interactionEffects.push(new InteractionEffect(e.offsetX, e.offsetY));
         });
         
-        // Create quantum disturbance on touch (mobile)
-        window.addEventListener('touchstart', function(event) {
-            createWave(event.touches[0].clientX, event.touches[0].clientY);
-        }, { passive: true });
+        interactionCanvas.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            const rect = interactionCanvas.getBoundingClientRect();
+            interactionEffects.push(new InteractionEffect(
+                e.touches[0].clientX - rect.left,
+                e.touches[0].clientY - rect.top
+            ));
+        });
         
-        function initParticles() {
-            particlesArray = [];
-            const numberOfParticles = Math.min(canvas.width * canvas.height / 9000, 200);
-            for (let i = 0; i < numberOfParticles; i++) {
-                particlesArray.push(new Particle());
-            }
-        }
-        
-        function connectParticles() {
-            const connectionDistance = 100;
-            
-            for (let a = 0; a < particlesArray.length; a++) {
-                for (let b = a + 1; b < particlesArray.length; b++) {
-                    const particleA = particlesArray[a];
-                    const particleB = particlesArray[b];
-                    
-                    const dx = particleA.x - particleB.x;
-                    const dy = particleA.y - particleB.y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    
-                    if (distance < connectionDistance) {
-                        // Create a quantum-looking connection
-                        const opacity = 1 - (distance / connectionDistance);
-                        
-                        ctx.beginPath();
-                        ctx.moveTo(particleA.x, particleA.y);
-                        ctx.lineTo(particleB.x, particleB.y);
-                        ctx.strokeStyle = `hsla(${hue}, 100%, 70%, ${opacity * 0.4})`;
-                        ctx.lineWidth = particleA.size * 0.3;
-                        ctx.stroke();
-                    }
-                }
-            }
-        }
-        
+        // Animation Loop
         function animate() {
-            // Clear with semi-transparent black for trails
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            // Clear particle canvas
+            partCtx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            partCtx.fillRect(0, 0, width, height);
             
-            // Update and draw all particles
-            for (let i = 0; i < particlesArray.length; i++) {
-                particlesArray[i].update();
-                particlesArray[i].draw();
-            }
+            // Clear interaction canvas
+            intCtx.clearRect(0, 0, width, height);
             
-            // Connect nearby particles
-            connectParticles();
+            // Update and render systems
+            dimensionalField.update();
             
-            // Cycle colors for quantum effect
-            hue = (hue + 0.5) % 360;
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
             
-            // Continue animation loop
+            neuralNetwork.update();
+            neuralNetwork.draw();
+            
+            // Update interaction effects
+            interactionEffects = interactionEffects.filter(effect => {
+                effect.draw();
+                return effect.update();
+            });
+            
             requestAnimationFrame(animate);
         }
         
-        // Start the animation
-        initParticles();
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Start the sublime experience
         animate();
     });
     </script>
